@@ -15,7 +15,7 @@
 <style>
 html,body{background:#07090f;margin:0}
 :root{
-  --ink:#07090f; --ink-2:#0d1119; --sand:#efe6d8; --mist:rgba(239,230,216,.64); --faint:rgba(239,230,216,.38);
+  --ink:#07090f; --ink-2:#0d1119; --sand:#efe6d8; --mist:rgba(239,230,216,.82); --faint:rgba(239,230,216,.6);
   --brass:#e0a766; --line:rgba(239,230,216,.14); --glass:rgba(255,255,255,.055);
   --ease:cubic-bezier(.16,1,.3,1);
   --serif:'Fraunces',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
@@ -74,7 +74,7 @@ header.nav{position:fixed;top:18px;left:0;right:0;z-index:50;display:flex;justif
 
 /* hero */
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--gutter) clamp(36px,7vh,80px);position:relative}
-.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:60%;background:linear-gradient(to top,rgba(7,9,15,.78),transparent);z-index:-1;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:60%;background:linear-gradient(to top,rgba(7,9,15,.82),transparent);z-index:-1;pointer-events:none}
 .hero h1{font-size:clamp(46px,9.2vw,148px);margin:20px 0 0;max-width:11ch}
 .hero-foot{display:flex;flex-wrap:wrap;gap:28px 60px;align-items:flex-end;justify-content:space-between;margin-top:clamp(28px,5vh,56px)}
 .hero p.lede{max-width:44ch;font-size:clamp(15px,1.25vw,18px);color:var(--mist);margin:0}
@@ -136,7 +136,7 @@ section{position:relative;padding:clamp(90px,16vh,200px) var(--gutter)}
 .process{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,6vw,110px)}
 .steps{position:relative;padding-left:56px}
 .steps svg.rail{position:absolute;left:11px;top:0;width:2px;height:100%;overflow:visible}
-.step{padding:0 0 clamp(60px,12vh,130px);opacity:.28;transition:opacity .8s var(--ease)}
+.step{padding:0 0 clamp(60px,12vh,130px);opacity:.6;transition:opacity .8s var(--ease)}
 .step:last-child{padding-bottom:0}
 .step.on{opacity:1}
 .step .dot{position:absolute;left:4px;width:16px;height:16px;border-radius:50%;border:1px solid var(--faint);background:var(--ink);transition:all .6s var(--ease);margin-top:.5em}
@@ -176,7 +176,7 @@ details .ans{padding:0 60px 28px 0;color:var(--mist);max-width:60ch}
 .cta .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .hint{margin-top:16px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
 
-footer{padding:60px var(--gutter) 0;background:linear-gradient(to bottom,transparent,rgba(7,9,15,.82) 40%);overflow:hidden}
+footer{padding:60px var(--gutter) 0;background:linear-gradient(to bottom,transparent,rgba(7,9,15,.8) 14%,rgba(7,9,15,.9) 50%);overflow:hidden}
 .foot-row{display:flex;flex-wrap:wrap;gap:20px 50px;justify-content:space-between;font-size:13.5px;color:var(--mist);padding-bottom:30px}
 .foot-row nav{display:flex;gap:26px;flex-wrap:wrap}
 .foot-row a:hover{color:var(--sand)}
@@ -200,6 +200,18 @@ html.gl .card.feat.glass{border-color:rgba(224,167,102,.6)}
 details{border:1px solid var(--line);border-radius:24px;padding:0 clamp(18px,2.2vw,28px);margin-bottom:12px}
 details:last-child{border-bottom:1px solid var(--line)}
 details .ans{padding-right:40px}
+
+.stick{align-self:start;position:sticky;top:18vh}
+@media (max-width:900px){.stick{position:static}.foot-row nav{gap:6px 4px}.foot-row nav a{padding:11px 12px}.logo{padding:6px 0}.hint{font-size:12px}.tag{font-size:11px}}
+/* readability */
+.hero,main section,footer{text-shadow:0 1px 14px rgba(7,9,15,.6),0 0 2px rgba(7,9,15,.35)}
+.btn-solid,.tag{text-shadow:none}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(7,9,15,.72),rgba(7,9,15,.38) 38%,transparent 66%)}
+@media (max-width:900px){.hero::before{background:linear-gradient(to top,rgba(7,9,15,.88),rgba(7,9,15,.55) 45%,transparent 80%)}}
+.nav-links{color:rgba(239,230,216,.9)}
+.marquee span{color:rgba(239,230,216,.92)}
+.manifesto .mw{opacity:.3}
 
 /* cursor + progress */
 #cur{position:fixed;left:0;top:0;z-index:90;pointer-events:none;display:none}
@@ -343,7 +355,7 @@ details .ans{padding-right:40px}
   </section>
 
   <section id="process" class="process scrim" aria-labelledby="prH">
-    <div style="align-self:start;position:sticky;top:18vh">
+    <div class="stick">
       <div class="eyebrow" data-reveal>How it works</div>
       <h2 class="display h2 vel" id="prH">No big bang. <em>Just a calm handover.</em></h2>
     </div>
@@ -366,7 +378,7 @@ details .ans{padding-right:40px}
   </section>
 
   <section id="faq" class="faq scrim" aria-labelledby="faqH">
-    <div style="align-self:start;position:sticky;top:18vh">
+    <div class="stick">
       <div class="eyebrow" data-reveal>Questions</div>
       <h2 class="display h2 vel" id="faqH">Things owners <em>ask first.</em></h2>
     </div>
@@ -379,7 +391,7 @@ details .ans{padding-right:40px}
     </div>
   </section>
 
-  <section id="contact" class="cta ctascrim" aria-labelledby="ctaH">
+  <section id="contact" class="cta ctascrim" data-scrim=".8" aria-labelledby="ctaH">
     <div>
       <div class="eyebrow" style="justify-content:center" data-reveal>Book a call</div>
       <h2 class="display vel" id="ctaH">Hand back <em>your weekends.</em></h2>
@@ -549,7 +561,7 @@ const GlassShader={
     vec3 col=texture2D(tDiffuse,vUv).rgb;
     float sc=0.;
     for(int i=0;i<6;i++){if(i>=uBands)break;vec4 b=uBand[i];float h=b.y-b.x;
-      float f=smoothstep(b.x,b.x+h*.18,p.y)*(1.-smoothstep(b.y-h*.18,b.y,p.y));sc=max(sc,f*b.z);}
+      float fd=min(h*.18,150.);float f=smoothstep(b.x,b.x+fd,p.y)*(1.-smoothstep(b.y-fd,b.y,p.y));sc=max(sc,f*b.z);}
     float shadow=0.;int hit=-1;float hd=0.;
     for(int i=0;i<MAXR;i++){if(i>=uCount)break;vec4 r=uRect[i];vec2 hb=r.zw*.5;vec2 c=r.xy+hb;float rad=min(uProp[i].x,min(hb.x,hb.y));
       float d=sdRR(p-c,hb,rad);
@@ -564,10 +576,10 @@ const GlassShader={
     vec2 off=-n*bend*bw*2.2+(c-p)*.03;
     float rnd=fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);
     vec3 acc=vec3(0.);
-    for(int k=0;k<12;k++){float a=float(k)*2.39996+rnd*6.2831;float rr=sqrt((float(k)+.5)/12.)*pr.y;acc+=samp(p+off+vec2(cos(a),sin(a))*rr);}
-    vec3 g=acc/12.;
+    for(int k=0;k<${MOBILE?6:12};k++){float a=float(k)*2.39996+rnd*6.2831;float rr=sqrt((float(k)+.5)/${MOBILE?'6.':'12.'})*pr.y;acc+=samp(p+off+vec2(cos(a),sin(a))*rr);}
+    vec3 g=acc/${MOBILE?'6.':'12.'};
     float ca=bend*5.;g.r=mix(g.r,samp(p+off+n*ca).r,.6*edge);g.b=mix(g.b,samp(p+off-n*ca).b,.6*edge);
-    g=mix(g,INK,sc*pr.z);g=mix(g,INK,pr.w);
+    g=mix(g,INK,max(sc*pr.z,pr.w));float lum=dot(g,vec3(.3,.6,.1));g/=1.+max(lum-.03,0.)*14.;
     g=g*1.06+vec3(.012,.013,.015);
     float ndl=dot(n,normalize(vec2(-.55,-.83)));
     float rim=smoothstep(2.2,0.,-hd);
@@ -793,7 +805,7 @@ if(ok){
 
 
 /* ---------------- liquid glass (rendered inside the 3D pass) ---------------- */
-const GLASS_DEF=[['#navpill',9,1,.34],['.marquee',10,1,.55],['.svc',12,.82,0],['.card',14,.78,0],['.stat',12,.74,0],['details',10,.84,0],['.cta .panel',14,.7,.3],['.btn-ghost',6,.6,.16]];
+const GLASS_DEF=[['#navpill',9,1,.8],['.marquee',10,1,.86],['.svc',12,.9,.84],['.card',14,.9,.84],['.stat',12,.88,.82],['details',10,.9,.84],['.cta .panel',14,.9,.84],['.btn-ghost',6,.8,.72]];
 let glassItems=[],bandEls=[];
 function collectGlass(){
   glassItems=[];
@@ -802,7 +814,7 @@ function collectGlass(){
     const chain=[el];let n=el.parentElement;for(let i=0;i<3&&n&&n!==document.body;i++){chain.push(n);n=n.parentElement}
     glassItems.push({el,frost,keep,dark,chain,rad:parseFloat(getComputedStyle(el).borderTopLeftRadius)||0});
   }));
-  bandEls=[...document.querySelectorAll('.scrim')];
+  bandEls=[...document.querySelectorAll('.scrim,[data-scrim]')];
 }
 function updateGlass(){
   const u=glassPass.uniforms,W=document.documentElement.clientWidth,H=innerHeight,vis=[];
@@ -817,7 +829,7 @@ function updateGlass(){
   const n=Math.min(vis.length,MAXR);
   for(let i=0;i<n;i++){const v=vis[i];u.uRect.value[i].set(v.r.left,v.r.top,v.r.width,v.r.height);u.uProp.value[i].set(v.it.rad,v.it.frost,v.it.keep,v.it.dark);u.uAlpha.value[i]=v.a}
   u.uCount.value=n;
-  let b=0;for(const el of bandEls){if(b>=6)break;const r=el.getBoundingClientRect();if(r.bottom<0||r.top>H)continue;u.uBand.value[b++].set(r.top,r.bottom,.955,0)}
+  let b=0;for(const el of bandEls){if(b>=6)break;const r=el.getBoundingClientRect();if(r.bottom<0||r.top>H)continue;u.uBand.value[b++].set(r.top,r.bottom,+(el.dataset.scrim||.955),0)}
   u.uBands.value=b;u.uRes.value.set(W,H);
 }
 
@@ -877,7 +889,7 @@ function resize(){
   const w=innerWidth,h=innerHeight;
   renderer.setSize(w,h,false);composer.setSize(w,h);camera.aspect=w/h;
   camera.fov=w/h<0.9?62:40;camera.updateProjectionMatrix();
-  heroOffset=w/h>1.1?3.6:0;
+  heroOffset=w/h>1.1?6.2:0;
 }
 addEventListener('resize',()=>{resize();ScrollTrigger.refresh()});
 resize();
