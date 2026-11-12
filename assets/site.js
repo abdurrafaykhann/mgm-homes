@@ -97,8 +97,8 @@ if(!RM){
     .to('.wordmark',{opacity:1,duration:.1},.47)
     .fromTo('.wordmark',{y:24},{y:0,duration:.1},.47)
     .to('.houseB img',{yPercent:-7,scale:1.08,duration:.4},.46)
-    .to('.s2',{y:()=>-innerHeight*1.35,duration:.26,ease:'power1.in'},.7)
-    .to('.white',{opacity:1,duration:.1},.9)
+    .to('.s2',{y:()=>-innerHeight*1.35,duration:.26,ease:'power1.in'},.58)
+    .to('.white',{opacity:1,duration:.16,ease:'power1.in'},.82)
     .to({}, {duration:.02},.98);
 }
 
@@ -139,7 +139,7 @@ if(ph&&!RM){
     e.preventDefault();
     const d=new FormData(f),L=[];
     L.push('Name: '+d.get('name'));L.push('Property location: '+d.get('location'));L.push('Currently listed on: '+(d.get('platforms')||'-'));L.push('Package of interest: '+d.get('package'));L.push('');L.push(d.get('message')||'');
-    location.href='mailto:hello@mgmhomes.com?subject='+encodeURIComponent('Book a call - '+d.get('name'))+'&body='+encodeURIComponent(L.join('\n'));
+    location.href='mailto:mgmhomes9@gmail.com?subject='+encodeURIComponent('Book a call - '+d.get('name'))+'&body='+encodeURIComponent(L.join('\n'));
     document.getElementById('cnote').textContent='Your email app should now be open with the message ready to send.';
   });
 })();
