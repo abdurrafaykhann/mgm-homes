@@ -5,306 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MGM Homes — Short-term rental co-hosting</title>
 <meta name="description" content="MGM Homes co-hosts your short-term rental. Pricing, guest messages and cleaners handled. You keep the listing, the keys and the final say.">
-<meta property="og:title" content="MGM Homes — Own the home. We'll host it.">
-<meta property="og:description" content="Short-term rental co-hosting for owners who want their time back.">
+<meta property="og:title" content="MGM Homes — Short-term rental co-hosting">
+<meta property="og:description" content="MGM Homes co-hosts your short-term rental. Pricing, guest messages and cleaners handled. You keep the listing, the keys and the final say.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Lora:ital,wght@0,400..600;1,400..600&display=swap" rel="stylesheet">
-<style>
-html,body{background:#fff;margin:0}
-:root{
-  --ink:#151717; --mute:#a9adad; --line:#e3e5e5; --paper:#fff; --fog:#f1f2f2; --dark:#151717;
-  --gut:clamp(20px,3.2vw,46px);
-  --sans:'Instrument Sans',system-ui,sans-serif; --serif:'Lora',Georgia,serif;
-  --ease:cubic-bezier(.16,1,.3,1);
-  --lw:min(58vw,820px);
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-html.lenis,html.lenis body{height:auto}
-.lenis.lenis-smooth{scroll-behavior:auto!important}
-body{font-family:var(--sans);color:var(--ink);line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
-:focus-visible{outline:2px solid #2f6fed;outline-offset:3px}
-h1,h2,h3,p{margin:0}
-.mute{color:var(--mute)}
-
-/* shared type */
-.h2{font-size:clamp(34px,4.6vw,68px);font-weight:500;letter-spacing:-.035em;line-height:1.02}
-.lead{font-size:clamp(26px,3.3vw,50px);font-weight:500;letter-spacing:-.03em;line-height:1.1}
-.body-l{font-size:clamp(17px,1.5vw,22px);font-weight:500;letter-spacing:-.015em;line-height:1.3}
-.label{font-size:13px;font-weight:600;letter-spacing:-.01em}
-.wd{display:inline-block}
-[data-fill] .wd{opacity:.26}
-.w{display:inline-block;overflow:hidden;vertical-align:top;padding:.12em .04em .16em;margin:-.12em -.04em -.16em}
-.wi{display:inline-block;will-change:transform}
-
-/* pill buttons */
-.pill{display:inline-flex;align-items:center;gap:12px;height:44px;padding:0 22px;border-radius:100px;font-size:13.5px;font-weight:600;letter-spacing:-.01em;
-  background:var(--ink);color:#fff;border:1px solid var(--ink);position:relative;overflow:hidden;transition:background .5s var(--ease),color .5s var(--ease),border-color .5s var(--ease)}
-.pill svg{width:15px;height:15px;transition:transform .5s var(--ease)}
-.pill:hover{background:#fff;color:var(--ink)}
-.pill:hover svg{transform:translateX(5px)}
-.pill.light{background:#fff;color:var(--ink);border-color:#fff}
-.pill.light:hover{background:transparent;color:#fff}
-.pill.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
-.pill.ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
-.pill.line{background:transparent;color:var(--ink);border-color:var(--line)}
-.pill.line:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-
-/* nav */
-header.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--gut);
-  transition:background .5s,box-shadow .5s,transform .7s var(--ease)}
-header.nav.solid{background:rgba(255,255,255,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--line)}
-header.nav.hide{transform:translateY(-100%)}
-.logo{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:-.02em;font-size:15px}
-.logo svg{height:17px;width:auto}
-.nav-links{display:flex;gap:clamp(16px,2.4vw,34px);font-size:13.5px;font-weight:600}
-.nav-links a{position:relative;padding:6px 0}
-.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
-.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
-
-/* ---------- hero ---------- */
-.hero{height:440vh;position:relative}
-.hero-top{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
-.sky{position:absolute;inset:0;background:linear-gradient(to bottom,#8299aa 0%,#9fb0bc 24%,#c3c9cd 50%,#ecd2bd 76%,#f4c4a0 100%)}
-.cloud{position:absolute;background-repeat:no-repeat;background-size:contain;pointer-events:none;will-change:transform}
-.c1{width:62vw;height:26vw;left:-8vw;top:16vh;opacity:.9}
-.c2{width:54vw;height:22vw;right:-10vw;top:8vh;opacity:.85}
-.c3{width:44vw;height:18vw;left:30vw;top:34vh;opacity:.6}
-.house{position:absolute;left:0;right:0;bottom:0;height:84vh;will-change:transform;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 34%);mask-image:linear-gradient(to bottom,transparent 0,#000 34%)}
-.house img{width:100%;height:100%;object-fit:cover;object-position:50% 58%;filter:brightness(1.1) saturate(1.05)}
-.composite{opacity:0;position:absolute;inset:0;
-  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:var(--lw) auto;mask-size:var(--lw) auto}
-.outline{opacity:0;position:absolute;left:50%;top:50%;width:var(--lw);transform:translate(-50%,-50%);overflow:visible;pointer-events:none}
-.outline path{fill:none;stroke:#fff;stroke-width:2.2;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
-.wordmark{position:absolute;left:0;right:0;top:calc(50% + var(--lw)*.1687 + 14px);text-align:center;font-size:calc(var(--lw)*.118);font-weight:600;letter-spacing:-.04em;line-height:1;opacity:0;
-  background:linear-gradient(#3a2a22,#151717);-webkit-background-clip:text;background-clip:text;color:transparent}
-.smoke{position:absolute;left:-6%;right:-6%;pointer-events:none;background-repeat:repeat-x;background-position:bottom;background-size:auto 100%;will-change:transform}
-.s1{bottom:-6vh;height:46vh}
-.s2{top:100%;height:70vh}
-.s2::after{content:"";position:absolute;left:0;right:0;top:92%;height:160vh;background:#fff}
-.white{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
-.hero-content{position:absolute;left:0;right:0;top:25vh;text-align:center;padding:0 var(--gut);z-index:2}
-.hero h1{font-size:clamp(46px,8.6vw,132px);font-weight:700;letter-spacing:-.045em;line-height:.96}
-.hero-sub{margin-top:18px;font-size:clamp(17px,1.9vw,27px);font-weight:500;letter-spacing:-.02em;color:rgba(21,23,23,.5)}
-.hero-sub b{color:var(--ink);font-weight:500}
-.hero-cta{margin-top:26px}
-.scrollcue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#fff;display:flex;flex-direction:column;align-items:center;gap:8px;text-shadow:0 1px 10px rgba(0,0,0,.35)}
-.scrollcue i{width:1px;height:38px;background:#fff;transform-origin:top;animation:cue 2.2s var(--ease) infinite}
-@keyframes cue{0%{transform:scaleY(0)}55%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
-
-/* ---------- sections ---------- */
-section{position:relative}
-.wrap{padding:0 var(--gut)}
-.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px}
-.why{padding:clamp(70px,10vw,150px) 0 0;background:#fff}
-.why .label{grid-column:1/5}
-.why .lead{grid-column:6/11;max-width:15em}
-.media{overflow:hidden;position:relative}
-.media img{width:100%;height:116%;object-fit:cover;will-change:transform}
-.why .media{margin-top:clamp(50px,7vw,110px);height:min(78vh,56vw)}
-
-.arrows{padding:clamp(80px,11vw,170px) 0;text-align:center;overflow:hidden}
-.chev-row{display:flex;justify-content:center;margin:clamp(40px,5vw,80px) auto;width:min(92vw,1180px)}
-.chev{flex:1 1 0;aspect-ratio:1/1.05;margin-left:-7.5%;clip-path:polygon(0 0,60% 0,100% 50%,60% 100%,0 100%,40% 50%);overflow:hidden;position:relative}
-.chev:first-child{margin-left:0}
-.chev img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-.chev:hover img{transform:scale(1.08)}
-.arrows .body-l{max-width:25em;margin:0 auto}
-
-.steps{padding:0 0 clamp(90px,11vw,170px)}
-.steps .left{grid-column:1/6}
-.steps .left .pill{margin-top:26px}
-.steps .right{grid-column:6/13}
-.steps .label{padding-bottom:18px;border-bottom:1px solid var(--line);display:block}
-.step{display:grid;grid-template-columns:44px 1fr;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
-.step .n{font-size:11px;color:var(--mute);font-weight:600}
-.step p{font-size:clamp(20px,2.3vw,34px);font-weight:500;letter-spacing:-.03em;line-height:1.12;color:var(--mute)}
-.step p b{color:var(--ink);font-weight:500}
-
-.owners{padding:0 0 clamp(90px,11vw,170px)}
-.owners .label{grid-column:1/5}
-.owners .h2{grid-column:6/13}
-.owners .small{grid-column:1/4;align-self:center;height:min(34vw,420px);margin-top:clamp(50px,6vw,90px)}
-.owners .large{grid-column:6/13;height:min(48vw,640px);margin-top:clamp(50px,6vw,90px)}
-.owners .copy{grid-column:6/12;margin-top:34px}
-.owners .copy .pill{margin-top:28px}
-
-.packs{background:var(--fog);padding:clamp(70px,8vw,120px) 0}
-.packs .h2{grid-column:1/13;margin-bottom:clamp(34px,4vw,60px)}
-.packs .pic{grid-column:1/8;height:min(46vw,600px)}
-.packs .panel{grid-column:8/13;padding-left:clamp(0px,2vw,30px);border-top:1px solid #c9cccc;position:relative}
-.tabs{display:flex;gap:10px;padding:22px 0;align-items:center}
-.tab{width:30px;height:30px;border-radius:50%;border:1px solid #c9cccc;font-size:11px;font-weight:600;color:#8d9191;display:grid;place-items:center;transition:all .5s var(--ease)}
-.tab[aria-selected="true"]{border-color:var(--ink);color:var(--ink)}
-.tabs .q{margin-left:auto;font-family:var(--serif);font-size:54px;line-height:.6;font-style:italic;padding-top:18px}
-.pk{display:none}
-.pk.on{display:block}
-.pk h3{font-size:clamp(34px,3.6vw,54px);font-weight:500;letter-spacing:-.035em;line-height:1}
-.pk .for{font-family:var(--serif);font-size:clamp(17px,1.45vw,21px);line-height:1.42;margin-top:16px;max-width:26em}
-.pk ul{list-style:none;padding:0;margin:22px 0 0;border-top:1px solid #d5d8d8}
-.pk li{padding:11px 0;border-bottom:1px solid #d5d8d8;font-size:14.5px;font-weight:500;display:flex;gap:12px}
-.pk li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--ink);margin-top:.55em;flex:none}
-.pk li.inh{color:#8d9191}
-.pk li.inh::before{background:#8d9191}
-.pk .pill{margin-top:24px}
-.bar{position:absolute;left:clamp(0px,2vw,30px);right:0;top:-1px;height:1px;background:var(--ink);transform-origin:left;transform:scaleX(0)}
-
-.services{background:var(--dark);color:#fff;padding:clamp(80px,9vw,140px) 0 0}
-.services .label{grid-column:1/5;color:#fff}
-.services .h2{grid-column:6/13}
-.srows{margin-top:clamp(50px,6vw,90px);border-top:1px solid rgba(255,255,255,.14)}
-.srow{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;align-items:center;padding:clamp(22px,2.6vw,38px) var(--gut);border-bottom:1px solid rgba(255,255,255,.14);overflow:hidden;isolation:isolate}
-.srow .bg{position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .7s var(--ease)}
-.srow .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.4s var(--ease)}
-.srow .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(21,23,23,.82),rgba(21,23,23,.42))}
-.srow:hover .bg{opacity:1}
-.srow:hover .bg img{transform:scale(1)}
-.srow .num{grid-column:1/2;width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.4);display:grid;place-items:center;font-size:11px;font-weight:600}
-.srow .d{grid-column:2/5;font-size:14.5px;font-weight:600;line-height:1.42;letter-spacing:-.01em;max-width:21em}
-.srow .big{grid-column:6/12;font-size:clamp(54px,10.5vw,168px);font-weight:500;letter-spacing:-.055em;line-height:.95;transition:transform .8s var(--ease)}
-.srow:hover .big{transform:translateX(14px)}
-.srow .arr{grid-column:12/13;justify-self:end;width:clamp(40px,5vw,84px);opacity:0;transform:translateX(-30px);transition:all .8s var(--ease)}
-.srow:hover .arr{opacity:1;transform:none}
-.services .close{padding:clamp(60px,7vw,110px) 0;border-bottom:1px solid rgba(255,255,255,.14)}
-.services .close .lead{grid-column:1/7;font-size:clamp(24px,2.7vw,40px)}
-.services .close .pill{margin-top:28px}
-.services .close>div{grid-column:1/7}
-
-.support{background:var(--dark);color:#fff;padding:clamp(70px,8vw,120px) 0 clamp(80px,9vw,140px)}
-.support .h2{grid-column:1/5}
-.support .txt{grid-column:6/12}
-.support .txt .pill{margin-top:26px}
-.cards{margin-top:clamp(44px,5vw,76px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.card{position:relative;aspect-ratio:1/.86;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(18px,2vw,30px);isolation:isolate}
-.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.4s var(--ease)}
-.card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to bottom,rgba(21,23,23,.55),rgba(21,23,23,.15) 45%,rgba(21,23,23,.6))}
-.card:hover img{transform:scale(1.07)}
-.card h3{font-size:clamp(22px,2.3vw,34px);font-weight:500;letter-spacing:-.03em;line-height:1.05;max-width:8em}
-.card p{font-size:14px;font-weight:500;max-width:22em;margin-bottom:16px;opacity:.9}
-
-.faq{background:var(--fog);padding:clamp(70px,8vw,120px) 0}
-.faq .h2{grid-column:1/5}
-.faq .txt{grid-column:6/12}
-.faq .txt .pill{margin-top:26px}
-.qlist{margin-top:clamp(40px,5vw,70px);border-top:1px solid #d5d8d8}
-details{border-bottom:1px solid #d5d8d8}
-summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;align-items:center;padding:clamp(22px,2.4vw,34px) 0}
-summary::-webkit-details-marker{display:none}
-summary .k{grid-column:1/5;font-size:13px;font-weight:600;color:#8d9191}
-summary .t{grid-column:6/12;font-size:clamp(21px,2.3vw,33px);font-weight:500;letter-spacing:-.03em;line-height:1.1}
-summary i{grid-column:12/13;justify-self:end;width:36px;height:36px;border-radius:50%;border:1px solid #c9cccc;position:relative;transition:background .5s,transform .6s var(--ease)}
-summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .6s var(--ease),background .5s}
-summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
-details[open] summary i{background:var(--ink);transform:rotate(180deg)}
-details[open] summary i::before,details[open] summary i::after{background:#fff}
-details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
-details .a{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;padding:0 0 clamp(24px,2.6vw,36px)}
-details .a p{grid-column:6/11;font-size:16px;font-weight:500;line-height:1.5;color:#4d5252}
-
-.outro{height:min(100vh,860px);min-height:520px;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;isolation:isolate}
-.outro .bgimg{position:absolute;inset:-8% 0;z-index:-2}
-.outro .bgimg img{width:100%;height:100%;object-fit:cover}
-.outro::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(21,23,23,.52)}
-.outro h2{font-size:clamp(34px,5vw,74px);font-weight:500;letter-spacing:-.04em;line-height:1.02;padding:0 var(--gut)}
-.outro h2 .mute{color:rgba(255,255,255,.62)}
-.outro .pill{margin-top:28px}
-
-footer{background:var(--dark);color:#fff;padding:clamp(60px,7vw,100px) 0 26px}
-.f-top{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;row-gap:40px}
-.f-cta{grid-column:1/7}
-.f-cta h3{font-size:clamp(22px,2.2vw,32px);font-weight:500;letter-spacing:-.03em}
-.f-mail{display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.3);font-size:15px;font-weight:500;color:rgba(255,255,255,.75);max-width:520px;transition:color .4s,border-color .4s}
-.f-mail:hover{color:#fff;border-color:#fff}
-.f-mail svg{width:18px;transition:transform .5s var(--ease)}
-.f-mail:hover svg{transform:translateX(6px)}
-.f-info{display:flex;gap:clamp(24px,4vw,70px);margin-top:44px;flex-wrap:wrap}
-.f-info small{display:block;font-size:11px;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:10px}
-.f-info span,.f-info a{font-size:14px;font-weight:600}
-.f-links{grid-column:9/11;display:grid;gap:6px;align-content:start}
-.f-links a{font-size:clamp(20px,1.9vw,27px);font-weight:500;letter-spacing:-.03em;width:max-content;opacity:.92;transition:opacity .3s,transform .5s var(--ease)}
-.f-links a:hover{opacity:1;transform:translateX(6px)}
-.f-soc{grid-column:11/13;display:grid;gap:12px;align-content:start;font-size:14px;font-weight:600}
-.f-soc a{width:max-content;opacity:.85}
-.f-soc a:hover{opacity:1;text-decoration:underline}
-.f-logo{margin-top:clamp(50px,6vw,90px);width:min(62%,900px);overflow:hidden}
-.f-logo svg{width:100%;height:auto;display:block}
-.f-legal{display:flex;gap:20px 34px;flex-wrap:wrap;margin-top:34px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.55)}
-.f-legal a:hover{color:#fff}
-.f-legal span{margin-left:auto}
-
-/* reveals */
-.js [data-reveal]{opacity:0;transform:translateY(34px)}
-.js [data-img]{clip-path:inset(100% 0 0 0)}
-
-@media (max-width:900px){
-  :root{--lw:84vw}
-  .nav-links{display:none}
-  .grid>*{grid-column:1/13!important}
-  .why .lead{margin-top:18px}
-  .why .media{height:70vw}
-  .chev-row{width:100%;padding:0 var(--gut);flex-wrap:wrap;gap:10px}
-  .chev{flex:1 1 calc(50% - 10px);margin-left:0;clip-path:none;aspect-ratio:1/1}
-  .steps .right{margin-top:44px}
-  .owners .h2{margin-top:16px}
-  .owners .small{height:62vw;margin-top:36px}
-  .owners .large{height:74vw;margin-top:14px}
-  .packs .pic{height:70vw}
-  .packs .panel{padding-left:0;margin-top:26px}
-  .bar{left:0}
-  .services .h2{margin-top:16px}
-  .srow{row-gap:14px}
-  .srow .num{grid-column:1/3}
-  .srow .d{grid-column:3/13;max-width:none}
-  .srow .big{grid-column:1/13}
-  .srow .arr{display:none}
-  .services .close>div{grid-column:1/13}
-  .support .txt,.faq .txt{margin-top:18px}
-  .cards{grid-template-columns:1fr}
-  .card{aspect-ratio:1/.72}
-  summary .k{display:none}
-  summary .t{grid-column:1/11}
-  summary i{grid-column:11/13}
-  details .a p{grid-column:1/13}
-  .f-cta,.f-links,.f-soc{grid-column:1/13}
-  .f-links a,.f-soc a,.f-legal a{padding:6px 0}
-  .f-logo{width:100%}
-  .f-legal span{margin-left:0}
-  .hero-content{top:20vh}
-  .house{height:70vh}
-  .c1{width:120vw;height:50vw}.c2{width:110vw;height:46vw}.c3{display:none}
-}
-@media (prefers-reduced-motion:reduce){
-  .hero{height:100vh;height:100svh}
-  .composite,.outline,.wordmark,.s2,.white,.scrollcue{display:none}
-  [data-fill] .wd{opacity:1}
-  .js [data-reveal]{opacity:1;transform:none}
-  .js [data-img]{clip-path:none}
-}
-</style>
+<style>html,body{background:#fff;margin:0}</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <header class="nav" id="nav">
-  <a href="#top" class="logo" aria-label="MGM Homes home">
+  <a href="index.html" class="logo" aria-label="MGM Homes home">
     <svg viewBox="0 0 830 280" aria-hidden="true"><g fill="currentColor"><path d="M0 280V0h74l56 142L186 0h74v280h-70V128l-38 96h-44l-38-96v152z"/><path d="M290 0h250v80H370v120h90v-34h-50v-58h130v172H290z"/><path d="M570 280V0h74l56 142L756 0h74v280h-70V128l-38 96h-44l-38-96v152z"/></g></svg>
     Homes
   </a>
-  <nav class="nav-links" aria-label="Primary">
-    <a href="#why">Why MGM</a>
-    <a href="#steps">How it works</a>
-    <a href="#packages">Packages</a>
-    <a href="#services">Services</a>
-    <a href="#faq">Questions</a>
-  </nav>
-  <a href="#contact" class="pill">Book a call</a>
+  <nav class="nav-links" aria-label="Primary"><a href="about.html">About</a><a href="services.html">Services</a><a href="packages.html">Packages</a><a href="index.html#faq">Questions</a><a href="contact.html">Contact</a></nav>
+  <div class="nav-right">
+    <a href="contact.html" class="pill">Book a call</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="mmenu"></button>
+  </div>
 </header>
+<div class="mmenu" id="mmenu" aria-hidden="true">
+  <nav aria-label="Menu"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="packages.html">Packages</a><a href="index.html#faq">Questions</a><a href="contact.html">Contact</a></nav>
+  <div class="foot"><a href="mailto:hello@mgmhomes.com">hello@mgmhomes.com</a><a href="contact.html" class="pill">Book a call <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+</div>
 
 <main>
 <section class="hero" id="top" aria-labelledby="h1">
@@ -323,7 +50,7 @@ footer{background:var(--dark);color:#fff;padding:clamp(60px,7vw,100px) 0 26px}
     <div class="hero-content" id="heroContent">
       <h1 id="h1">Own the Home. We’ll Host It.</h1>
       <p class="hero-sub" id="heroSub">Sharper pricing. <b>Faster replies.</b> A calendar that runs itself.</p>
-      <div class="hero-cta" id="heroCta"><a href="#contact" class="pill">Book a call
+      <div class="hero-cta" id="heroCta"><a href="contact.html" class="pill">Book a call
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
     </div>
     <div class="scrollcue" aria-hidden="true"><i></i>Scroll</div>
@@ -355,7 +82,7 @@ footer{background:var(--dark);color:#fff;padding:clamp(60px,7vw,100px) 0 26px}
   <div class="wrap grid">
     <div class="left">
       <h2 class="h2" id="stH">Co-hosting,<br><span class="mute">Rewired.</span></h2>
-      <a href="#contact" class="pill" data-reveal>Start with a call
+      <a href="contact.html" class="pill" data-reveal>Start with a call
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
     </div>
     <div class="right">
@@ -376,7 +103,7 @@ footer{background:var(--dark);color:#fff;padding:clamp(60px,7vw,100px) 0 26px}
     <div class="media large" data-img data-par><img src="https://images.unsplash.com/photo-1728048756938-de1ccee0ab15?auto=format&fit=crop&w=1600&q=70" alt="Aerial view of a house with a pool surrounded by greenery" loading="lazy"></div>
     <div class="copy">
       <p class="body-l" data-fill>With MGM Homes the listing, the accounts and the keys stay yours. We work inside your accounts as a co-host, and you can see or change anything at any time. We coordinate the cleaners and vendors you already trust; you keep contracting with them directly.</p>
-      <a href="#packages" class="pill" data-reveal>See the packages
+      <a href="packages.html" class="pill" data-reveal>See the packages
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
     </div>
   </div>
@@ -398,19 +125,19 @@ footer{background:var(--dark);color:#fff;padding:clamp(60px,7vw,100px) 0 26px}
         <h3>Essential</h3>
         <p class="for">For owners who handle cleaning and on-site work themselves.</p>
         <ul><li>Listing setup and optimisation</li><li>Pricing and calendar management</li><li>Multi-platform channel management</li><li>Guest messaging and reviews</li><li>Reporting and compliance support</li></ul>
-        <a href="#contact" class="pill">Talk about Essential</a>
+        <a href="contact.html?package=Essential" class="pill">Talk about Essential</a>
       </div>
       <div class="pk" id="pk2" role="tabpanel" aria-labelledby="t2">
         <h3>Plus</h3>
         <p class="for">For owners who want the physical side of the stay looked after too.</p>
         <ul><li class="inh">Everything in Essential</li><li>Cleaning and laundry coordination</li><li>Maintenance coordination</li><li>Self check-in and smart-lock setup</li><li>Photography coordination</li></ul>
-        <a href="#contact" class="pill">Talk about Plus</a>
+        <a href="contact.html?package=Plus" class="pill">Talk about Plus</a>
       </div>
       <div class="pk" id="pk3" role="tabpanel" aria-labelledby="t3">
         <h3>Signature</h3>
         <p class="for">For high-value listings and owners who want to be fully out of the loop.</p>
         <ul><li class="inh">Everything in Plus</li><li>24/7 guest support</li><li>Priority operations response</li><li>Monthly strategy calls</li><li>Revenue forecasting</li></ul>
-        <a href="#contact" class="pill">Talk about Signature</a>
+        <a href="contact.html?package=Signature" class="pill">Talk about Signature</a>
       </div>
     </div>
   </div>
@@ -422,23 +149,23 @@ footer{background:var(--dark);color:#fff;padding:clamp(60px,7vw,100px) 0 26px}
     <h2 class="h2" id="svH">How MGM<br><span class="mute">Can Help You</span></h2>
   </div>
   <div class="srows">
-    <a class="srow" href="#contact"><div class="bg"><img src="https://images.unsplash.com/photo-1713832139688-79676097edde?auto=format&fit=crop&w=1800&q=60" alt="" loading="lazy"></div>
+    <a class="srow" href="services.html#list"><div class="bg"><img src="https://images.unsplash.com/photo-1713832139688-79676097edde?auto=format&fit=crop&w=1800&q=60" alt="" loading="lazy"></div>
       <span class="num">1</span><p class="d">Photos, copy, amenities and house rules, reviewed and refreshed as the seasons turn, so the listing keeps earning its place in search.</p><span class="big">List</span>
       <svg class="arr" viewBox="0 0 84 60" fill="none" stroke="currentColor" stroke-width="4"><path d="M2 30h78M54 4l26 26-26 26"/></svg></a>
-    <a class="srow" href="#contact"><div class="bg"><img src="https://images.unsplash.com/photo-1634671813720-b6696a365b1e?auto=format&fit=crop&w=1800&q=60" alt="" loading="lazy"></div>
+    <a class="srow" href="services.html#price"><div class="bg"><img src="https://images.unsplash.com/photo-1634671813720-b6696a365b1e?auto=format&fit=crop&w=1800&q=60" alt="" loading="lazy"></div>
       <span class="num">2</span><p class="d">Dynamic, seasonal and event-based pricing, with minimum stays and lead times tuned to real demand rather than a guess.</p><span class="big">Price</span>
       <svg class="arr" viewBox="0 0 84 60" fill="none" stroke="currentColor" stroke-width="4"><path d="M2 30h78M54 4l26 26-26 26"/></svg></a>
-    <a class="srow" href="#contact"><div class="bg"><img src="https://images.unsplash.com/photo-1593987314040-8e0ac84ae724?auto=format&fit=crop&w=1800&q=60" alt="" loading="lazy"></div>
+    <a class="srow" href="services.html#host"><div class="bg"><img src="https://images.unsplash.com/photo-1593987314040-8e0ac84ae724?auto=format&fit=crop&w=1800&q=60" alt="" loading="lazy"></div>
       <span class="num">3</span><p class="d">Enquiries, check-in questions and the mid-stay problem at 11pm. Answered quickly, in your voice, without waking you.</p><span class="big">Host</span>
       <svg class="arr" viewBox="0 0 84 60" fill="none" stroke="currentColor" stroke-width="4"><path d="M2 30h78M54 4l26 26-26 26"/></svg></a>
-    <a class="srow" href="#contact"><div class="bg"><img src="https://images.unsplash.com/photo-1706164971302-e30c0640cc3b?auto=format&fit=crop&w=1800&q=60" alt="" loading="lazy"></div>
+    <a class="srow" href="services.html#care"><div class="bg"><img src="https://images.unsplash.com/photo-1706164971302-e30c0640cc3b?auto=format&fit=crop&w=1800&q=60" alt="" loading="lazy"></div>
       <span class="num">4</span><p class="d">Cleaners and maintenance scheduled around the calendar. You keep contracting with your own vendors; we keep them on time.</p><span class="big">Care</span>
       <svg class="arr" viewBox="0 0 84 60" fill="none" stroke="currentColor" stroke-width="4"><path d="M2 30h78M54 4l26 26-26 26"/></svg></a>
   </div>
   <div class="wrap grid close">
     <div>
       <p class="lead" data-fill>We manage your listing across Airbnb, Booking.com, Vrbo, Agoda and Expedia, with calendars kept in sync.</p>
-      <a href="#contact" class="pill ghost" data-reveal>Get started with MGM
+      <a href="contact.html" class="pill ghost" data-reveal>Get started with MGM
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
     </div>
   </div>
@@ -449,16 +176,16 @@ footer{background:var(--dark);color:#fff;padding:clamp(60px,7vw,100px) 0 26px}
     <h2 class="h2" id="spH">Support<br>Beyond <span class="mute">the Booking</span></h2>
     <div class="txt">
       <p class="body-l" data-fill>A good stay starts before the guest arrives. On the Plus and Signature packages we look after the details around the booking too.</p>
-      <a href="#packages" class="pill light" data-reveal>Compare packages
+      <a href="packages.html" class="pill light" data-reveal>Compare packages
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
     </div>
   </div>
   <div class="wrap"><div class="cards">
-    <a class="card" href="#packages" data-reveal><img src="https://images.unsplash.com/photo-1706164971309-fb4785fe6ceb?auto=format&fit=crop&w=1000&q=65" alt="Walkway leading to the front door of a modern house" loading="lazy">
+    <a class="card" href="packages.html" data-reveal><img src="https://images.unsplash.com/photo-1706164971309-fb4785fe6ceb?auto=format&fit=crop&w=1000&q=65" alt="Walkway leading to the front door of a modern house" loading="lazy">
       <h3>Smart-Lock Check-In</h3><div><p>Self check-in and smart-lock setup, so arrivals don’t depend on anyone’s evening.</p><span class="pill ghost">Learn more <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
-    <a class="card" href="#packages" data-reveal><img src="https://images.unsplash.com/photo-1591533103012-040525c4d054?auto=format&fit=crop&w=1000&q=65" alt="White building with palm trees at dusk" loading="lazy">
+    <a class="card" href="packages.html" data-reveal><img src="https://images.unsplash.com/photo-1591533103012-040525c4d054?auto=format&fit=crop&w=1000&q=65" alt="White building with palm trees at dusk" loading="lazy">
       <h3>Photography Coordination</h3><div><p>We brief and book the shoot, so the listing shows the home at its best.</p><span class="pill ghost">Learn more <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
-    <a class="card" href="#packages" data-reveal><img src="https://images.unsplash.com/photo-1564193495687-031783e9e06c?auto=format&fit=crop&w=1000&q=65" alt="Swimming pool seen from above" loading="lazy">
+    <a class="card" href="packages.html" data-reveal><img src="https://images.unsplash.com/photo-1564193495687-031783e9e06c?auto=format&fit=crop&w=1000&q=65" alt="Swimming pool seen from above" loading="lazy">
       <h3>Revenue Forecasting</h3><div><p>Monthly strategy calls and a forward view of what the calendar should earn.</p><span class="pill ghost">Learn more <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></a>
   </div></div>
 </section>
@@ -468,7 +195,7 @@ footer{background:var(--dark);color:#fff;padding:clamp(60px,7vw,100px) 0 26px}
     <h2 class="h2" id="fqH">Questions <span class="mute">&amp;<br>Answers</span></h2>
     <div class="txt">
       <p class="body-l">The things owners ask us first, answered plainly.</p>
-      <a href="#contact" class="pill" data-reveal>Ask us directly
+      <a href="contact.html" class="pill" data-reveal>Ask us directly
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
     </div>
   </div>
@@ -481,12 +208,11 @@ footer{background:var(--dark);color:#fff;padding:clamp(60px,7vw,100px) 0 26px}
   </div></div>
 </section>
 
-<section class="outro" id="contact" aria-labelledby="otH">
+<section class="outro" id="contact" aria-label="Book a call">
   <div class="bgimg" id="outroBg"><img src="https://images.unsplash.com/photo-1728722104881-773da8f4b7ea?auto=format&fit=crop&w=2000&q=65" alt="" loading="lazy"></div>
   <div>
-    <h2 id="otH">Hand Back <span class="mute">Your Weekends.</span></h2>
-    <a href="mailto:hello@mgmhomes.com?subject=Book%20a%20call" class="pill light">Book a call
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+    <h2>Hand Back <span class="mute">Your Weekends.</span></h2>
+    <a href="contact.html" class="pill light">Book a call <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
   </div>
 </section>
 </main>
@@ -496,14 +222,14 @@ footer{background:var(--dark);color:#fff;padding:clamp(60px,7vw,100px) 0 26px}
     <div class="f-top">
       <div class="f-cta">
         <h3>Twenty minutes. No pitch deck.</h3>
-        <a class="f-mail" href="mailto:hello@mgmhomes.com?subject=Book%20a%20call"><span>hello@mgmhomes.com</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+        <a class="f-mail" href="contact.html"><span>Book a call with MGM Homes</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
         <div class="f-info">
           <div><small>Email us</small><a href="mailto:hello@mgmhomes.com">hello@mgmhomes.com</a></div>
           <div><small>Platforms</small><span>Airbnb · Booking.com · Vrbo · Agoda · Expedia</span></div>
         </div>
       </div>
       <nav class="f-links" aria-label="Footer">
-        <a href="#why">Why MGM</a><a href="#steps">How it works</a><a href="#packages">Packages</a><a href="#services">Services</a><a href="#faq">Questions</a>
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="packages.html">Packages</a><a href="contact.html">Contact</a>
       </nav>
       <div class="f-soc"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">LinkedIn</a></div>
     </div>
@@ -517,192 +243,6 @@ footer{background:var(--dark);color:#fff;padding:clamp(60px,7vw,100px) 0 26px}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script>
-(function(){
-'use strict';
-const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const MOBILE=innerWidth<900;
-document.documentElement.classList.add('js');
-gsap.registerPlugin(ScrollTrigger);
-
-/* ---------- logo mask ---------- */
-const LOGO='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 280"><path d="M0 280V0h74l56 142L186 0h74v280h-70V128l-38 96h-44l-38-96v152z"/><path d="M290 0h250v80H370v120h90v-34h-50v-58h130v172H290z"/><path d="M570 280V0h74l56 142L756 0h74v280h-70V128l-38 96h-44l-38-96v152z"/></svg>';
-const maskUrl='url("data:image/svg+xml,'+encodeURIComponent(LOGO)+'")';
-const comp=document.getElementById('composite');
-comp.style.webkitMaskImage=maskUrl;comp.style.maskImage=maskUrl;
-
-/* ---------- procedural clouds ---------- */
-function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
-function cloud(w,h,seed,band){
-  const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d'),R=rng(seed);
-  const n=band?150:70;
-  for(let i=0;i<n;i++){
-    let x,y,r;
-    if(band){x=R()*w;const t=R();y=h*(.3+.7*t);r=(.1+.2*R())*h*(.6+t*.8)}
-    else{const a=R()*6.28,d=Math.pow(R(),.7);x=w/2+Math.cos(a)*d*w*.34;y=h*.58+Math.sin(a)*d*h*.2-(1-d)*h*.12;r=(.1+.16*R())*h*(1.25-d*.6)}
-    const gr=g.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,'rgba(255,255,255,'+(band?.5:.42)+')');gr.addColorStop(.55,'rgba(255,255,255,'+(band?.22:.16)+')');gr.addColorStop(1,'rgba(255,255,255,0)');
-    g.fillStyle=gr;g.beginPath();g.arc(x,y,r,0,7);g.fill();
-  }
-  if(band){const gr=g.createLinearGradient(0,h*.55,0,h);gr.addColorStop(0,'rgba(255,255,255,0)');gr.addColorStop(1,'rgba(255,255,255,1)');g.fillStyle=gr;g.fillRect(0,h*.55,w,h*.45)}
-  return 'url('+c.toDataURL('image/png')+')';
-}
-document.querySelector('.c1').style.backgroundImage=cloud(900,380,11);
-document.querySelector('.c2').style.backgroundImage=cloud(900,380,29);
-document.querySelector('.c3').style.backgroundImage=cloud(700,300,53);
-document.querySelector('.s1').style.backgroundImage=cloud(1400,420,71,true);
-document.querySelector('.s2').style.backgroundImage=cloud(1400,520,97,true);
-
-/* ---------- text splitting ---------- */
-function split(el,cls){
-  const out=[];
-  (function walk(n){[...n.childNodes].forEach(c=>{
-    if(c.nodeType===3){const f=document.createDocumentFragment();
-      c.textContent.split(/(\s+)/).forEach(p=>{if(!p)return;if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(' '));return}
-        if(cls==='mask'){const w=document.createElement('span');w.className='w';const i=document.createElement('span');i.className='wi';i.textContent=p;w.appendChild(i);f.appendChild(w);out.push(i)}
-        else{const s=document.createElement('span');s.className='wd';s.textContent=p;f.appendChild(s);out.push(s)}});
-      n.replaceChild(f,c)}
-    else if(c.nodeType===1&&c.tagName!=='BR')walk(c)})})(el);
-  return out;
-}
-
-/* ---------- smooth scroll ---------- */
-let lenis=null;
-if(!RM&&window.Lenis){lenis=new Lenis({lerp:.09,smoothWheel:true});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0)}
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
-  const id=a.getAttribute('href');if(id.length<2){e.preventDefault();return}
-  const el=document.querySelector(id);if(!el)return;e.preventDefault();
-  const y=id==='#top'?0:el;
-  lenis?lenis.scrollTo(y,{duration:1.6,easing:t=>1-Math.pow(1-t,4)}):(id==='#top'?scrollTo({top:0,behavior:'smooth'}):el.scrollIntoView({behavior:'smooth'}));
-}));
-
-/* ---------- nav ---------- */
-const nav=document.getElementById('nav'),hero=document.querySelector('.hero');let lastY=0;
-ScrollTrigger.create({start:0,end:'max',onUpdate:s=>{
-  const y=s.scroll(),past=y>hero.offsetHeight-innerHeight*.9;
-  nav.classList.toggle('solid',past);
-  nav.classList.toggle('hide',past&&y>lastY+2);
-  if(y<lastY-2)nav.classList.remove('hide');
-  lastY=y;
-}});
-
-/* ---------- hero ---------- */
-const h1w=split(document.getElementById('h1'),'mask');
-if(!RM){
-  const houses=gsap.utils.toArray('.house');
-  gsap.set(houses,{yPercent:56});
-  gsap.set('.s1',{yPercent:55});
-  // intro
-  gsap.set(h1w,{yPercent:115});gsap.set(['#heroSub','#heroCta','.scrollcue'],{opacity:0,y:20});gsap.set(nav,{yPercent:-100});
-  const intro=gsap.timeline({defaults:{ease:'expo.out'},delay:.15});
-  intro.from(houses,{yPercent:86,duration:2.2},0)
-       .from(['.c1','.c2','.c3'],{opacity:0,scale:1.15,duration:2.4,stagger:.12},0)
-       .to(h1w,{yPercent:0,duration:1.5,stagger:.07},.35)
-       .to(['#heroSub','#heroCta','.scrollcue'],{opacity:1,y:0,duration:1.2,stagger:.1},.9)
-       .to(nav,{yPercent:0,duration:1.2,clearProps:'transform'},.7);
-  // idle cloud drift
-  gsap.to('.c1',{x:'6vw',duration:26,ease:'sine.inOut',yoyo:true,repeat:-1});
-  gsap.to('.c2',{x:'-7vw',duration:32,ease:'sine.inOut',yoyo:true,repeat:-1});
-  gsap.to('.c3',{x:'5vw',duration:22,ease:'sine.inOut',yoyo:true,repeat:-1});
-  // scroll story
-  const tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:hero,start:'top top',end:'bottom bottom',scrub:.6}});
-  tl.to(houses,{yPercent:0,duration:.3,ease:'power1.out'},0)
-    .to('#heroContent',{opacity:0,y:-60,duration:.14},.05)
-    .to('.scrollcue',{opacity:0,duration:.06},.02)
-    .to('.s1',{yPercent:0,duration:.3},0)
-    .to('.c1',{yPercent:-40,duration:1},0).to('.c2',{yPercent:-28,duration:1},0).to('.c3',{yPercent:-60,duration:1},0)
-    .to('.outline',{opacity:1,duration:.02},.23)
-    .to('.outline path',{strokeDashoffset:0,duration:.2,stagger:.03,ease:'power1.inOut'},.24)
-    .set('.composite',{opacity:1},.44)
-    .to('.houseA',{opacity:0,duration:.1},.44)
-    .to('.s1',{opacity:.55,duration:.1},.44)
-    .to('.outline',{opacity:0,duration:.06},.5)
-    .to('.wordmark',{opacity:1,duration:.1},.47)
-    .fromTo('.wordmark',{y:24},{y:0,duration:.1},.47)
-    .to('.houseB img',{yPercent:-7,scale:1.08,duration:.4},.46)
-    .to('.s2',{y:()=>-innerHeight*1.35,duration:.26,ease:'power1.in'},.7)
-    .to('.white',{opacity:1,duration:.1},.9)
-    .to({}, {duration:.02},.98);
-}
-
-/* ---------- word fill ---------- */
-document.querySelectorAll('[data-fill]').forEach(el=>{
-  const ws=split(el,'wd');
-  if(RM)return;
-  gsap.to(ws,{opacity:1,stagger:.1,ease:'none',scrollTrigger:{trigger:el,start:'top 82%',end:'bottom 52%',scrub:true}});
-});
-
-if(!RM){
-  /* headings: masked word reveal */
-  document.querySelectorAll('.h2:not([data-fill]), .outro h2').forEach(h=>{
-    const ws=split(h,'mask');
-    gsap.from(ws,{yPercent:115,duration:1.3,ease:'expo.out',stagger:.06,scrollTrigger:{trigger:h,start:'top 88%'}});
-  });
-  /* generic reveals */
-  gsap.utils.toArray('[data-reveal]').forEach(el=>{
-    gsap.to(el,{opacity:1,y:0,duration:1.2,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 92%'}});
-  });
-  /* image clip reveal + parallax */
-  gsap.utils.toArray('[data-img]').forEach(el=>{
-    const img=el.querySelector('img');
-    gsap.to(el,{clipPath:'inset(0% 0 0 0)',duration:1.6,ease:'power4.inOut',scrollTrigger:{trigger:el,start:'top 88%'}});
-    gsap.fromTo(img,{scale:1.25},{scale:1,duration:2,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 88%'}});
-  });
-  gsap.utils.toArray('[data-par] img').forEach(img=>{
-    gsap.fromTo(img,{yPercent:-13},{yPercent:0,ease:'none',scrollTrigger:{trigger:img.parentElement,start:'top bottom',end:'bottom top',scrub:true}});
-  });
-  /* chevrons */
-  gsap.from('.chev',{xPercent:-60,opacity:0,duration:1.4,ease:'expo.out',stagger:.12,scrollTrigger:{trigger:'#chevs',start:'top 82%'}});
-  /* service rows */
-  gsap.utils.toArray('.srow').forEach(r=>{
-    gsap.from(r.querySelector('.big'),{yPercent:60,opacity:0,duration:1.3,ease:'expo.out',scrollTrigger:{trigger:r,start:'top 90%'}});
-    gsap.from([r.querySelector('.num'),r.querySelector('.d')],{opacity:0,y:20,duration:1.1,ease:'expo.out',stagger:.08,scrollTrigger:{trigger:r,start:'top 90%'}});
-  });
-  /* outro parallax + footer logo */
-  gsap.fromTo('#outroBg',{yPercent:-7},{yPercent:7,ease:'none',scrollTrigger:{trigger:'.outro',start:'top bottom',end:'bottom top',scrub:true}});
-  gsap.from('#fLogo svg',{yPercent:100,duration:1.6,ease:'expo.out',scrollTrigger:{trigger:'#fLogo',start:'top 96%'}});
-}
-
-/* ---------- packages slider ---------- */
-(function(){
-  const tabs=[...document.querySelectorAll('.tab')],panels=[...document.querySelectorAll('.pk')],bar=document.getElementById('pkBar');
-  let cur=0,timer=null,seen=false;const DUR=8;
-  function show(i,user){
-    if(i===cur&&user!==undefined&&!user)return;
-    cur=i;
-    tabs.forEach((t,k)=>t.setAttribute('aria-selected',k===i));
-    panels.forEach((p,k)=>p.classList.toggle('on',k===i));
-    if(!RM)gsap.fromTo(panels[i].children,{opacity:0,y:18},{opacity:1,y:0,duration:.9,ease:'expo.out',stagger:.06});
-    run();
-  }
-  function run(){
-    if(RM||!seen)return;
-    gsap.killTweensOf(bar);
-    gsap.fromTo(bar,{scaleX:0},{scaleX:1,duration:DUR,ease:'none',onComplete:()=>show((cur+1)%panels.length)});
-  }
-  tabs.forEach((t,i)=>t.addEventListener('click',()=>show(i,true)));
-  const panel=document.querySelector('.packs .panel');
-  panel.addEventListener('pointerenter',()=>gsap.getTweensOf(bar).forEach(t=>t.pause()));
-  panel.addEventListener('pointerleave',()=>gsap.getTweensOf(bar).forEach(t=>t.resume()));
-  ScrollTrigger.create({trigger:panel,start:'top 80%',once:true,onEnter:()=>{seen=true;run()}});
-})();
-
-/* ---------- FAQ: one open at a time, animated ---------- */
-document.querySelectorAll('details').forEach(d=>{
-  const a=d.querySelector('.a');
-  d.querySelector('summary').addEventListener('click',e=>{
-    if(RM)return;
-    e.preventDefault();
-    if(d.open){gsap.to(a,{height:0,opacity:0,duration:.5,ease:'power3.inOut',onComplete:()=>{d.open=false;gsap.set(a,{clearProps:'all'})}})}
-    else{
-      document.querySelectorAll('details[open]').forEach(o=>{if(o!==d){const oa=o.querySelector('.a');gsap.to(oa,{height:0,opacity:0,duration:.4,ease:'power3.inOut',onComplete:()=>{o.open=false;gsap.set(oa,{clearProps:'all'})}})}});
-      d.open=true;gsap.fromTo(a,{height:0,opacity:0},{height:'auto',opacity:1,duration:.7,ease:'expo.out',onComplete:()=>ScrollTrigger.refresh()});
-    }
-  });
-  a.style.overflow='hidden';
-});
-
-addEventListener('load',()=>ScrollTrigger.refresh());
-})();
-</script>
+<script src="assets/site.js"></script>
 </body>
 </html>
